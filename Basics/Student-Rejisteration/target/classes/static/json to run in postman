@@ -1,0 +1,83 @@
+{
+  "info": {
+    "_postman_id": "1a2b3c4d-5e6f-7g8h-9i0j-klmnopqrstuv",
+    "name": "Student API - Localhost",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "openai-assistant"
+  },
+  "item": [
+    {
+      "name": "Create Student",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/Student/create?srn=1MS21CS001&name=John&depart=CS&sem=5&cgpa=8.5",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["Student", "create"],
+          "query": [
+            { "key": "srn", "value": "1MS21CS001" },
+            { "key": "name", "value": "John" },
+            { "key": "depart", "value": "CS" },
+            { "key": "sem", "value": "5" },
+            { "key": "cgpa", "value": "8.5" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get All Students",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/Student/getall",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["Student", "getall"]
+        }
+      }
+    },
+    {
+      "name": "Update Student",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/Student/update?srn=1MS21CS001&name=Johnny&depart=CS&sem=6&cgpa=8.8",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["Student", "update"],
+          "query": [
+            { "key": "srn", "value": "1MS21CS001" },
+            { "key": "name", "value": "Johnny" },
+            { "key": "depart", "value": "CS" },
+            { "key": "sem", "value": "6" },
+            { "key": "cgpa", "value": "8.8" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Student",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/Student/delete?srn=1MS21CS001",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["Student", "delete"],
+          "query": [
+            { "key": "srn", "value": "1MS21CS001" }
+          ]
+        }
+      }
+    }
+  ]
+}
