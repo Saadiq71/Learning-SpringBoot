@@ -1,0 +1,104 @@
+{
+  "info": {
+    "name": "Todo API Collection",
+    "description": "Postman collection for testing Spring Boot Todo endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "todo-api-collection"
+  },
+  "item": [
+    {
+      "name": "Add Todo",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            { "key": "id", "value": "1", "type": "text" },
+            { "key": "title", "value": "Learn Spring Boot", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/todo/create",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["todo", "create"]
+        }
+      }
+    },
+    {
+      "name": "Get All Todos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/todo/all_todo",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["todo", "all_todo"]
+        }
+      }
+    },
+    {
+      "name": "Update Todo Title",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            { "key": "id", "value": "1", "type": "text" },
+            { "key": "title", "value": "Master Spring Boot", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/todo/update",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["todo", "update"]
+        }
+      }
+    },
+    {
+      "name": "Delete Todo",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            { "key": "id", "value": "1", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/todo/delete",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["todo", "delete"]
+        }
+      }
+    },
+    {
+      "name": "Change Todo Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/todo/change?id=1&status=true",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["todo", "change"],
+          "query": [
+            { "key": "id", "value": "1" },
+            { "key": "status", "value": "true" }
+          ]
+        }
+      }
+    }
+  ]
+}
