@@ -1,0 +1,117 @@
+{
+  "info": {
+    "name": "Library Management API",
+    "_postman_id": "12345678-90ab-cdef-1234-567890abcdef",
+    "description": "Postman Collection for Library Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Create User",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/library/create_user?uid=101&name=John%20Doe",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["library", "create_user"],
+          "query": [
+            { "key": "uid", "value": "101" },
+            { "key": "name", "value": "John Doe" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "2. Borrow Book",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/library/borrow_book?uid=101&bid=201",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["library", "borrow_book"],
+          "query": [
+            { "key": "uid", "value": "101" },
+            { "key": "bid", "value": "201" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "3. Return Book",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/library/return_book?uid=101&bid=201",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["library", "return_book"],
+          "query": [
+            { "key": "uid", "value": "101" },
+            { "key": "bid", "value": "201" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "4. Add Book (Admin)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/library/add_book?email=admin@example.com&pass=admin123&id=301&title=SpringBoot101",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["library", "add_book"],
+          "query": [
+            { "key": "email", "value": "admin@example.com" },
+            { "key": "pass", "value": "admin123" },
+            { "key": "id", "value": "301" },
+            { "key": "title", "value": "SpringBoot101" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "5. Remove Book (Admin)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/library/remove_book?email=admin@example.com&pass=admin123&id=301",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["library", "remove_book"],
+          "query": [
+            { "key": "email", "value": "admin@example.com" },
+            { "key": "pass", "value": "admin123" },
+            { "key": "id", "value": "301" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "6. Get All Users and Borrowed Books",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/library/all_users",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["library", "all_users"]
+        }
+      }
+    }
+  ]
+}
