@@ -1,0 +1,252 @@
+{
+  "info": {
+    "name": "Notes and Todo App",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+
+    {
+      "name": "Create User 1",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/user/create?email=user1@mail.com&password=pass123",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["user", "create"],
+          "query": [
+            { "key": "email", "value": "user1@mail.com" },
+            { "key": "password", "value": "pass123" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create User 2",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/user/create?email=user2@mail.com&password=hello123",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["user", "create"],
+          "query": [
+            { "key": "email", "value": "user2@mail.com" },
+            { "key": "password", "value": "hello123" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Login User 1",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/user/login?email=user1@mail.com&password=pass123",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["user", "login"],
+          "query": [
+            { "key": "email", "value": "user1@mail.com" },
+            { "key": "password", "value": "pass123" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Change Password",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/user/changepassword?email=user1@mail.com&password=pass123&newpass=newpass123",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["user", "changepassword"],
+          "query": [
+            { "key": "email", "value": "user1@mail.com" },
+            { "key": "password", "value": "pass123" },
+            { "key": "newpass", "value": "newpass123" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Note",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/notes/create?email=user1@mail.com&title=My Note&content=This is the content",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["notes", "create"],
+          "query": [
+            { "key": "email", "value": "user1@mail.com" },
+            { "key": "title", "value": "My Note" },
+            { "key": "content", "value": "This is the content" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Notes by Email",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/notes/getbyemail?email=user1@mail.com",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["notes", "getbyemail"],
+          "query": [
+            { "key": "email", "value": "user1@mail.com" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Note Title",
+      "request": {
+        "method": "PUT",
+        "url": {
+          "raw": "http://localhost:8080/notes/update_title?noteid=NOTE_ID_HERE&newtitle=Updated Title",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["notes", "update_title"],
+          "query": [
+            { "key": "noteid", "value": "NOTE_ID_HERE" },
+            { "key": "newtitle", "value": "Updated Title" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Note Content",
+      "request": {
+        "method": "PUT",
+        "url": {
+          "raw": "http://localhost:8080/notes/update_content?noteid=NOTE_ID_HERE&newcontent=Updated content",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["notes", "update_content"],
+          "query": [
+            { "key": "noteid", "value": "NOTE_ID_HERE" },
+            { "key": "newcontent", "value": "Updated content" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Note",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8080/notes/delete?noteid=NOTE_ID_HERE",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["notes", "delete"],
+          "query": [
+            { "key": "noteid", "value": "NOTE_ID_HERE" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Todo",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8080/todo/create?email=user1@mail.com&title=Learn Spring",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["todo", "create"],
+          "query": [
+            { "key": "email", "value": "user1@mail.com" },
+            { "key": "title", "value": "Learn Spring" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Todos by Email",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/todo/getbyemail?email=user1@mail.com",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["todo", "getbyemail"],
+          "query": [
+            { "key": "email", "value": "user1@mail.com" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Todo Title",
+      "request": {
+        "method": "PUT",
+        "url": {
+          "raw": "http://localhost:8080/todo/update_title?Tid=TODO_ID_HERE&newtitle=Spring Boot",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["todo", "update_title"],
+          "query": [
+            { "key": "Tid", "value": "TODO_ID_HERE" },
+            { "key": "newtitle", "value": "Spring Boot" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Todo Status",
+      "request": {
+        "method": "PUT",
+        "url": {
+          "raw": "http://localhost:8080/todo/update_status?Tid=TODO_ID_HERE&status=true",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["todo", "update_status"],
+          "query": [
+            { "key": "Tid", "value": "TODO_ID_HERE" },
+            { "key": "status", "value": "true" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete Todo",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8080/todo/delete?Tid=TODO_ID_HERE",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["todo", "delete"],
+          "query": [
+            { "key": "Tid", "value": "TODO_ID_HERE" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete User 1",
+      "request": {
+        "method": "PUT",
+        "url": {
+          "raw": "http://localhost:8080/user/delete?email=user1@mail.com&password=newpass123",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["user", "delete"],
+          "query": [
+            { "key": "email", "value": "user1@mail.com" },
+            { "key": "password", "value": "newpass123" }
+          ]
+        }
+      }
+    }
+  ]
+}
