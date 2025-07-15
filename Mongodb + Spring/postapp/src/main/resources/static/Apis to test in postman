@@ -1,0 +1,273 @@
+{
+  "info": {
+    "_postman_id": "f21cc9c0-0c4f-4f67-8f7b-abc123456789",
+    "name": "PostApp Cloudinary Test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "admin"
+  },
+  "item": [
+    {
+      "name": "1. Register User 1 (with profile image)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "email", "value": "user1@example.com", "type": "text" },
+            { "key": "pass", "value": "password1", "type": "text" },
+            {
+              "key": "profileImage",
+              "type": "file",
+              "src": "/path/to/image1.jpg"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/user/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["user", "register"]
+        }
+      }
+    },
+    {
+      "name": "2. Register User 2 (no profile image)",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "email", "value": "user2@example.com", "type": "text" },
+            { "key": "pass", "value": "password2", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/user/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["user", "register"]
+        }
+      }
+    },
+    {
+      "name": "3. Login User 1",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "email", "value": "user1@example.com", "type": "text" },
+            { "key": "pass", "value": "password1", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/user/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["user", "login"]
+        }
+      }
+    },
+    {
+      "name": "4. Create Post for User 1 (multiple files)",
+      "request": {
+        "method": "POST",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "email", "value": "user1@example.com", "type": "text" },
+            { "key": "caption", "value": "My first post", "type": "text" },
+            {
+              "key": "files",
+              "type": "file",
+              "src": "/path/to/image1.jpg"
+            },
+            {
+              "key": "files",
+              "type": "file",
+              "src": "/path/to/video1.mp4"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/post/create",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["post", "create"]
+        }
+      }
+    },
+    {
+      "name": "5. Get All Posts",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/user/all",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["user", "all"]
+        }
+      }
+    },
+    {
+      "name": "6. Get My Posts (user1)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/user/myposts?email=user1@example.com",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["user", "myposts"],
+          "query": [
+            { "key": "email", "value": "user1@example.com" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "7. Update Post Caption",
+      "request": {
+        "method": "PUT",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "postid",
+              "value": "<paste-postid-here>",
+              "type": "text"
+            },
+            {
+              "key": "newcaption",
+              "value": "Updated caption from Postman",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/post/updatecaption",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["post", "updatecaption"]
+        }
+      }
+    },
+    {
+      "name": "8. Delete Post",
+      "request": {
+        "method": "DELETE",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "postid",
+              "value": "<paste-postid-here>",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/post/delete",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["post", "delete"]
+        }
+      }
+    },
+    {
+      "name": "9. Change User1 Password",
+      "request": {
+        "method": "PUT",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "email", "value": "user1@example.com", "type": "text" },
+            { "key": "newpass", "value": "newpass123", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/user/changepass",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["user", "changepass"]
+        }
+      }
+    },
+    {
+      "name": "10. Set New Profile Image",
+      "request": {
+        "method": "PUT",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "email", "value": "user1@example.com", "type": "text" },
+            {
+              "key": "profileImage",
+              "type": "file",
+              "src": "/path/to/newprofile.jpg"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/user/setprofile",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["user", "setprofile"]
+        }
+      }
+    },
+    {
+      "name": "11. Delete Profile Image",
+      "request": {
+        "method": "DELETE",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "email", "value": "user1@example.com", "type": "text" },
+            {
+              "key": "fileid",
+              "value": "<paste-profile-public_id-here>",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/user/deleteprofileimage",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["user", "deleteprofileimage"]
+        }
+      }
+    },
+    {
+      "name": "12. Delete User1 Account",
+      "request": {
+        "method": "DELETE",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "email", "value": "user1@example.com", "type": "text" }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/user/delete",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["user", "delete"]
+        }
+      }
+    }
+  ]
+}
